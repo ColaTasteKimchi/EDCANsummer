@@ -9,8 +9,13 @@ import android.widget.Toast;
 
 import com.example.edcansummer.databinding.ActivityLoginBinding;
 import com.example.edcansummer.databinding.ActivityRejisterBinding;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class RejisterActivity extends AppCompatActivity {
+    private FirebaseFirestore firebaseFirestore = FirebaseFirestore.getInstance();
+    private FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
+
     private ActivityRejisterBinding binding;
 
     @Override
@@ -22,7 +27,7 @@ public class RejisterActivity extends AppCompatActivity {
         binding.setPw("");
         binding.setPwcheck("");
         binding.btnRegiSignup.setOnClickListener(view -> {
-            register(binding.getName(), binding.getEmail(), binding.getPw(), binding.getPwcheck())
+            register(binding.getName(), binding.getEmail(), binding.getPw(), binding.getPwcheck());
         });
     }
 
@@ -35,5 +40,17 @@ public class RejisterActivity extends AppCompatActivity {
             Toast.makeText(this, "비밀번호가 일치하지 않습니다", Toast.LENGTH_SHORT).show();
             return;
         }
+        firebaseFirestore
+                .collection("users")
+                .document(email)
+                .set(new UserModel(name, email))
+        .addOnSuccessListener(runnable -> {
+            firebaseAuth
+                    .createUserWithEmailAndPassword(email, pw)
+            .addOnSuccessListener(runnable1 -> {
+                Toast.makeText(this, "정상적으로 가입되었습니다!", Toast.LENGTH_SHORT).show();
+                finish();
+            });
+        });
     }
 }
