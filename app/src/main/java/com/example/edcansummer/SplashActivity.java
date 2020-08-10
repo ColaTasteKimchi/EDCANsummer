@@ -2,6 +2,7 @@ package com.example.edcansummer;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -16,7 +17,7 @@ public class SplashActivity extends AppCompatActivity {
          getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
          new Handler().postDelayed(()->{
-            startActivity(new Intent( SplashActivity.this, MainActivity.class));
+            startActivity(new Intent( SplashActivity.this, LoginActivity.class));
          },  1500);
     }
 }
