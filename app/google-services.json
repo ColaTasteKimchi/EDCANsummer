@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "867170277579",
+    "firebase_url": "https://edcansummer10617-46921.firebaseio.com",
+    "project_id": "edcansummer10617-46921",
+    "storage_bucket": "edcansummer10617-46921.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:867170277579:android:cd16b8e53a645a0dad234e",
+        "android_client_info": {
+          "package_name": "com.example.edcansummer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "867170277579-lf07n4e4uuuc8vf9q4f5s98nioho2irs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCoiCRvIuo7ARwmQWOItIPs16wLyPZ6tMw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "867170277579-lf07n4e4uuuc8vf9q4f5s98nioho2irs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
