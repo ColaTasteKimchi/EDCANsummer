@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
             }
             return true;
         });
+        switchFragment(MemoFragment.newInstance());
     }
     private void switchFragment(Fragment fragment){
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
