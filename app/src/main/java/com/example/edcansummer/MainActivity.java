@@ -9,8 +9,7 @@ import android.os.Bundle;
 import android.view.Menu;
 
 import com.example.edcansummer.databinding.ActivityMainBinding;
-import com.example.edcansummer.databinding.ActivityMainBindingImpl;
-import com.example.edcansummer.databinding.ActivityRejisterBinding;
+
 
 public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding binding;

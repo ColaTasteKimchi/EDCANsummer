@@ -1,12 +1,12 @@
 package com.example.edcansummer;
 
-public class MemorModel {
+public class MemoModel {
     private String text, time, email;
 
-    public MemorModel(){
+    public MemoModel(){
     }
 
-    public MemorModel(String text, String time, String email) {
+    public MemoModel(String text, String time, String email) {
         this.text = text;
         this.time = time;
         this.email = email;

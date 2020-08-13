@@ -7,7 +7,7 @@
 
         <variable
             name="memo"
-            type="com.example.edcansummer.MemorModel" />
+            type="com.example.edcansummer.MemoModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -31,7 +31,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="@{memo.text, default=`그저 아무거나`}"
+            android:text="@{memo.text, default=`asdfs`}"
             android:textColor="@android:color/black"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"

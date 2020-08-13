@@ -29,7 +29,7 @@ public class LoginActivity extends AppCompatActivity {
             login(binding.getEmail(), binding.getPw());
         });
         binding.btnLoginSignup.setOnClickListener(view -> {
-            startActivity(new Intent(LoginActivity.this, RejisterActivity.class));
+            startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
         });
     }
 

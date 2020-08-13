@@ -4,7 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+        <import type="androidx.databinding.ObservableArrayList"/>
+        <import type="com.example.edcansummer.MemoModel"/>
+        <variable
+            name="items"
+            type="ObservableArrayList&lt;MemoModel&gt;" />
 
     </data>
 
@@ -13,6 +17,7 @@
         android:layout_height="match_parent">
 
         <androidx.recyclerview.widget.RecyclerView
+            app:memoItem="@{items}"
             android:id="@+id/recycler_memo"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
