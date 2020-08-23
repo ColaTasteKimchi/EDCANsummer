@@ -4,8 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-        <import type="androidx.databinding.ObservableArrayList"/>
-        <import type="com.example.edcansummer.MemoModel"/>
+
+        <import type="androidx.databinding.ObservableArrayList" />
+
+        <import type="com.example.edcansummer.MemoModel" />
+
         <variable
             name="items"
             type="ObservableArrayList&lt;MemoModel&gt;" />
@@ -16,11 +19,24 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:title="메모"
+            app:titleTextAppearance="@style/TitleBarTextAppearance" />
+
         <androidx.recyclerview.widget.RecyclerView
-            app:memoItem="@{items}"
             android:id="@+id/recycler_memo"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar"
+            app:memoItem="@{items}"
             tools:listitem="@layout/row_memo" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -32,5 +48,6 @@
             android:tint="@android:color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

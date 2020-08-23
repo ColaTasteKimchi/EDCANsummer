@@ -12,10 +12,13 @@
         <activity android:name=".NewMemoActivity"></activity>
         <activity
             android:name=".RegisterActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".LoginActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+
         <activity
             android:name=".SplashActivity"
             android:screenOrientation="portrait">

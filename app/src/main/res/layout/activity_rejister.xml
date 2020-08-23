@@ -22,38 +22,60 @@
             type="String" />
     </data>
 
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <com.airbnb.lottie.LottieAnimationView
+            app:lottie_loop="true"
+            app:lottie_autoPlay="true"
+            app:lottie_rawRes="@raw/profile"
+            android:id="@+id/lottie_layer_name"
+            android:layout_width="128dp"
+            android:layout_height="128dp"
+            app:layout_constraintBottom_toTopOf="@+id/constraint_regi"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraint_regi"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="24dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toBottomOf="@id/lottie_layer_name">
 
-            <EditText
-                android:id="@+id/edt_regi_name"
+            <Button
+                android:id="@+id/btn_regi_signup"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="name"
-                android:inputType="textEmailAddress"
-                android:text="@={name}"
+                android:layout_height="match_parent"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/round_box"
+                android:backgroundTint="@color/colorPrimary"
+                android:fontFamily="@font/apple_sd_gothic_neo_h"
+                android:text="회원가입"
+                android:textColor="@android:color/white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toBottomOf="@+id/edt_regi_passwordcheck" />
 
             <EditText
                 android:id="@+id/edt_regi_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:hint="Email"
+                android:background="@drawable/round_box"
+                android:backgroundTint="@color/materialGray1"
+                android:fontFamily="@font/apple_sd_gothic_neo_r"
+                android:hint="이메일"
                 android:inputType="textEmailAddress"
+                android:padding="16dp"
                 android:text="@={email}"
+                android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/edt_regi_name" />
@@ -63,9 +85,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:hint="Password"
+                android:background="@drawable/round_box"
+                android:backgroundTint="@color/materialGray1"
+                android:fontFamily="@font/apple_sd_gothic_neo_r"
+                android:hint="비밀번호"
                 android:inputType="textPassword"
+                android:padding="16dp"
                 android:text="@={pw}"
+                android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/edt_regi_email" />
@@ -74,23 +101,35 @@
                 android:id="@+id/edt_regi_passwordcheck"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Confirm Password"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/round_box"
+                android:backgroundTint="@color/materialGray1"
+                android:fontFamily="@font/apple_sd_gothic_neo_r"
+                android:hint="비밀번호 확인"
                 android:inputType="textPassword"
+                android:padding="16dp"
                 android:text="@={pwcheck}"
+                android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.666"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/edt_regi_password" />
 
-            <Button
-                android:id="@+id/btn_regi_signup"
+            <EditText
+                android:id="@+id/edt_regi_name"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="16dp"
-                android:text="Sign up"
+                android:layout_height="wrap_content"
+                android:background="@drawable/round_box"
+                android:backgroundTint="@color/materialGray1"
+                android:fontFamily="@font/apple_sd_gothic_neo_r"
+                android:hint="이름"
+                android:inputType="textEmailAddress"
+                android:padding="16dp"
+                android:text="@={name}"
+                android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/edt_regi_passwordcheck" />
+                app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 

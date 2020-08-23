@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
@@ -12,27 +13,53 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="24dp">
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:title="더보기"
+            app:titleTextAppearance="@style/TitleBarTextAppearance" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            app:layout_constraintVertical_chainStyle="packed"
+            android:id="@+id/lottieAnimationView2"
+            android:layout_width="128dp"
+            android:layout_height="128dp"
+            app:layout_constraintBottom_toTopOf="@+id/txt_more_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/profile" />
 
         <TextView
+            android:layout_marginTop="24dp"
             android:id="@+id/txt_more_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/apple_sd_gothic_neo_h"
+            android:includeFontPadding="false"
             android:text="@{user.name, default=`Username`}"
-            android:textColor="@android:color/black"
+            android:textColor="@color/materialDarkBlack"
             android:textSize="28sp"
             app:layout_constraintBottom_toTopOf="@+id/txt_more_info"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_chainStyle="packed" />
+            app:layout_constraintTop_toBottomOf="@+id/lottieAnimationView2" />
 
         <TextView
             android:id="@+id/txt_more_info"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/apple_sd_gothic_neo_r"
             android:gravity="center"
             android:text="@{user.email+`\n`+user.time, default=`email@email.com\n2020/00/00 00:00 AM`}"
             android:textSize="16sp"
@@ -45,7 +72,13 @@
             android:id="@+id/btn_more_delete"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="delete account"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/round_box"
+            android:backgroundTint="@color/materialRed"
+            android:fontFamily="@font/apple_sd_gothic_neo_h"
+            android:text="회원 탈퇴하기"
+            android:textColor="@android:color/white"
             app:layout_constraintBottom_toTopOf="@+id/btn_more_pw"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
@@ -54,7 +87,13 @@
             android:id="@+id/btn_more_pw"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="reset password"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/round_box"
+            android:backgroundTint="@color/colorPrimary"
+            android:fontFamily="@font/apple_sd_gothic_neo_h"
+            android:text="패스워드 재설정"
+            android:textColor="@android:color/white"
             app:layout_constraintBottom_toTopOf="@+id/btn_more_logout"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
@@ -63,7 +102,12 @@
             android:id="@+id/btn_more_logout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="logout"
+            android:layout_margin="16dp"
+            android:background="@drawable/round_box"
+            android:backgroundTint="@color/colorPrimary"
+            android:fontFamily="@font/apple_sd_gothic_neo_h"
+            android:text="로그아웃"
+            android:textColor="@android:color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
